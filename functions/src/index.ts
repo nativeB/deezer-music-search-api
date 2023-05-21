@@ -4,11 +4,11 @@ dotenv.config();
 import express, {Request, Response} from "express";
 import {searchTracksController} from "./controllers/trackController";
 import {getArtistInfoController} from "./controllers/artistController";
-// import cors from "cors";
-// app.use(cors());
+import cors from "cors";
+
 const app = express();
 
-
+app.use(cors());
 // search tracks
 app.get("/search", searchTracksController);
 
